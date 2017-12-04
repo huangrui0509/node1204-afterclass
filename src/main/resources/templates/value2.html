@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"></meta>
+<title>Insert title here</title>
+<script th:src="@{webjars/jquery/3.2.1/jquery.js}" type="text/javascript" charset="utf-8"></script>
+<script th:inline="javascript">
+
+</script>
+</head>
+<body>
+
+<form action="getvaluebyform" method="get" id="fm" name="frm">
+			姓名： <input type="text" name="name" id="name" value="" /><br /><br />
+			年龄： <input type="text" name="age" id="age" value="" /><br /><br />
+			身高： <input type="text" name="height" id="height" value="" /><br /><br />
+			<input type="submit" value="提交数据" />
+</form>
+
+</body>
+</html>

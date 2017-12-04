@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"></meta>
+<title>Insert title here</title>
+
+<script th:src="@{webjars/jquery/3.2.1/jquery.js}" type="text/javascript" charset="utf-8"></script>
+<script th:inline="javascript">
+function getValue(){
+	$.ajax({
+		type:"post",
+		url:"gettable",
+		success:function(json){
+			var tab=$("#tab");
+			
+			for(var key in json){
+				var person=json[key];
+				//alert(person);
+				tab.append("<tr><td >"+person.id+"</td><td >"+person.name+"</td><td >"+person.age+"</td><td >"+person.height+"</td></tr>");
+			}
+		}
+		
+	});
+}
+
+
+
+</script>
+</head>
+<body>
+
+<input type="button" id="" value="点击获取表格数据" onclick="getValue()"/>
+<br/>
+<table border="1px" id="tab">
+			<tr>
+				<td width="100px">id</td>
+				<td width="100px">name</td>
+				<td width="100px">age</td>
+				<td width="100px">height</td>
+				
+			</tr>
+			
+			
+			
+			
+			
+		</table>
+
+
+
+</body>
+</html>
